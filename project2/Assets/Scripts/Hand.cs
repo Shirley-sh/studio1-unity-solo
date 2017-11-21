@@ -22,19 +22,19 @@ public class Hand : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D thisCollision) {
 
-		if ((thisCollision.gameObject.CompareTag ("LeftHand")|| thisCollision.gameObject.CompareTag ("RightHand")) && !playerParent.GetComponent<PlayerController>().isHolding) {
+		if ((thisCollision.gameObject.CompareTag ("LeftHand")|| thisCollision.gameObject.CompareTag ("RightHand")) /*&& !playerParent.GetComponent<PlayerController>().isHolding*/) {
 
 		
 			otterParent = thisCollision.gameObject.transform.parent.gameObject;
-			playerParent.AddComponent<SpringJoint2D> ();  
-			playerParent.GetComponent<SpringJoint2D>().connectedBody=otterParent.GetComponent<Rigidbody2D>() ;
-			playerParent.GetComponent<SpringJoint2D> ().autoConfigureDistance = false;
-			playerParent.GetComponent<SpringJoint2D> ().distance = 0.001f;
-			playerParent.GetComponent<SpringJoint2D> ().enableCollision = true;
-			playerParent.GetComponent<SpringJoint2D> ().frequency = 3.0f;
-			playerParent.GetComponent<SpringJoint2D> ().dampingRatio = 0.7f;
+            playerParent.AddComponent<SpringJoint2D>();
+            playerParent.GetComponent<SpringJoint2D>().connectedBody = otterParent.GetComponent<Rigidbody2D>();
+            playerParent.GetComponent<SpringJoint2D>().autoConfigureDistance = false;
+            playerParent.GetComponent<SpringJoint2D>().distance = 0.001f;
+            playerParent.GetComponent<SpringJoint2D>().enableCollision = true;
+            playerParent.GetComponent<SpringJoint2D>().frequency = 3.0f;
+            playerParent.GetComponent<SpringJoint2D>().dampingRatio = 0.7f;
 
-			if (isLeftHand) {
+            if (isLeftHand) {
 				playerParent.GetComponent<SpringJoint2D> ().anchor = new Vector2 (-0.25f, 0.25f);
 				playerParent.GetComponent<PlayerController> ().HoldLeftHand ();
 			} else {

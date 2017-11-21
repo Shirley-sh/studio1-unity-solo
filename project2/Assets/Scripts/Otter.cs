@@ -63,7 +63,7 @@ public class Otter : MonoBehaviour {
 				anim.SetTrigger ("Face");
 				faceTimer = 10;
 			}
-			waterParticle.GetComponent<ParticleSystem> ().Pause ();
+			//waterParticle.GetComponent<ParticleSystem> ().Pause ();
 		}
 	}
 

@@ -69,11 +69,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown (1) && isHolding) {
 			Debug.Log ("ReleaseHand");
+            Destroy(GetComponent<SpringJoint2D>());
 
-			ReleaseHand ();
-			isHolding = false;
+            //ReleaseHand ();
+            //isHolding = false;
 
-		}
+        }
 
 
 		Vector3 force = targetPosition - transform.position;
@@ -98,8 +99,8 @@ public class PlayerController : MonoBehaviour {
 
 
 		//remove joint
-		Destroy (GetComponent<SpringJoint2D>());
-		Debug.Log ("Removed");
+		//Destroy (GetComponent<SpringJoint2D>());
+		//Debug.Log ("Removed");
 
 
 		anim.SetBool ("Left", false);
