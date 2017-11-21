@@ -26,6 +26,9 @@ public class Otter : MonoBehaviour {
 	[Header("Turning Speed")]
 	public float turnSpeed;
 
+    public GameObject thePlayer;
+    bool holdingHands;
+
 	[Header("Animation Change Speed")]
 	public float swimSpeed;
 
@@ -39,17 +42,22 @@ public class Otter : MonoBehaviour {
 		faceTimer = 10;
 		waterParticle.GetComponent<ParticleSystem> ().Pause ();
 		anim.SetBool ("Swim", false);
+
+        holdingHands = thePlayer.GetComponent<PlayerController>().isHolding;
 	}
 
 	void Update(){
 		timer -= Time.deltaTime;
-		if (timer<=0) {
-			targetPosition = transform.position + new Vector3( Random.Range(-range,range), Random.Range(-range, range),0);
-			float AngleRad = Mathf.Atan2 (targetPosition.y - GetComponent <Transform> ().position.y, targetPosition.x - GetComponent <Transform> ().position.x);
-			targetAngle = (180 / Mathf.PI) * AngleRad -90;
-			timer = Random.Range (timerMin, timerMax);
-			hitLand = false;
-		}
+        if (holdingHands == false) {
+            if (timer <= 0) {
+                targetPosition = transform.position + new Vector3(Random.Range(-range, range), Random.Range(-range, range), 0);
+                float AngleRad = Mathf.Atan2(targetPosition.y - GetComponent<Transform>().position.y, targetPosition.x - GetComponent<Transform>().position.x);
+                targetAngle = (180 / Mathf.PI) * AngleRad - 90;
+                timer = Random.Range(timerMin, timerMax);
+                hitLand = false;
+            }
+        }
+        
 		faceTimer -= Time.deltaTime;
 
 
