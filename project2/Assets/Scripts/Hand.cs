@@ -35,7 +35,12 @@ public class Hand : MonoBehaviour {
                 //}
             //}
             otterParent = thisCollision.gameObject.transform.parent.gameObject;
-            playerParent.AddComponent<SpringJoint2D>();
+            //playerParent.AddComponent<SpringJoint2D>();
+
+            if (!playerParent.GetComponent<SpringJoint2D>()) {
+                playerParent.AddComponent<SpringJoint2D>();
+            }
+
             playerParent.GetComponent<SpringJoint2D>().connectedBody = otterParent.GetComponent<Rigidbody2D>();
             playerParent.GetComponent<SpringJoint2D>().autoConfigureDistance = false;
             playerParent.GetComponent<SpringJoint2D>().distance = 0.001f;
@@ -143,7 +148,7 @@ public class Hand : MonoBehaviour {
 		holdHandCD = 3.0f;
 		otterParent.GetComponent<Otter> ().ReleaseHand ();
 		otterParent = null;
-
+        Destroy(playerParent.GetComponent<SpringJoint2D>());
 	}
 
 }
