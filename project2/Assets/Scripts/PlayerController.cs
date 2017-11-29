@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 
 	public int score;
     public int otterScore;  //how many otters have you held hands with?
+    private bool alreadyHeld;
 
 	float swimTimer;
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 		waterParticle.GetComponent<ParticleSystem> ().Pause ();
 		score = 0;
         otterScore = 0;
+        alreadyHeld = false;
 	}
 	void Update(){
 		if (swimTimer >= 0) {
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour {
 
 		}
         if (thisCollision.gameObject.CompareTag("Otter")) {
+            alreadyHeld = thisCollision.gameObject.GetComponent<Otter>().held;
             //otterScore++;
             //Debug.Log("Otter score is now " + otterScore);
         }
@@ -116,13 +119,19 @@ public class PlayerController : MonoBehaviour {
 
 	public void HoldLeftHand(){
 		anim.SetBool ("Left", true);
-        otterScore++;
+        if (alreadyHeld == false) {
+            otterScore++;
+        }
+
         Debug.Log("Otter score is now " + otterScore);
     }
 
 	public void HoldRightHand(){
 		anim.SetBool ("Right", true);
-        otterScore++;
+        if (alreadyHeld == false) {
+            otterScore++;
+        }
+        //otterScore++;
         Debug.Log("Otter score is now " + otterScore);
     }
 		
