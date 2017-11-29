@@ -28,6 +28,7 @@ public class Otter : MonoBehaviour {
 
     public GameObject thePlayer;
     bool holdingHands;
+    public bool held;   //has the Player Otter held hands with this NPO?
 
 	[Header("Animation Change Speed")]
 	public float swimSpeed;
@@ -44,6 +45,7 @@ public class Otter : MonoBehaviour {
 		anim.SetBool ("Swim", false);
 
         holdingHands = thePlayer.GetComponent<PlayerController>().isHolding;
+        held = false;
 	}
 
 	void Update(){
@@ -57,6 +59,9 @@ public class Otter : MonoBehaviour {
                 hitLand = false;
             }
         }
+        //else {
+        //    held = true;
+        //}
         
 		faceTimer -= Time.deltaTime;
 
@@ -94,10 +99,12 @@ public class Otter : MonoBehaviour {
 
 	public void HoldLeftHand(){
 		anim.SetBool ("Left", true);
+        held = true;
 	}
 
 	public void HoldRightHand(){
 		anim.SetBool ("Right", true);
+        held = true;
 	}
 
 	public void ReleaseHand(){

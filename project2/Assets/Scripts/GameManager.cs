@@ -15,6 +15,8 @@ public class GameManager: MonoBehaviour {
 	public int targetSocre;
 	public bool gameover;
 	bool flooded;
+    private int theOtterScore;
+    private int totalOtters;
 
 
 	public GameObject levelClearedPanel;
@@ -24,11 +26,14 @@ public class GameManager: MonoBehaviour {
 		otters = GameObject.FindGameObjectsWithTag ("Otter");
 		gameover = false;
 		flooded = false;
-	}
+        theOtterScore = player.GetComponent<PlayerController>().otterScore;
+        totalOtters = otters.Length;
+    }
 
 	// Update is called once per frame
 	void Update () {
-		foreach (GameObject otter in otters) {
+        theOtterScore = player.GetComponent<PlayerController>().otterScore;
+        foreach (GameObject otter in otters) {
 			if (!otter.GetComponent<Otter> ().isAlive ()) {
 				gameover = true;
 				break;
@@ -36,7 +41,7 @@ public class GameManager: MonoBehaviour {
 		}
 
 		if (!gameover) {
-			if (player.GetComponent<PlayerController> ().score == targetSocre) {
+			if (theOtterScore == targetSocre) {
 				gameover = true;
 				levelClearedPanel.SetActive (true);
 			}
@@ -60,7 +65,7 @@ public class GameManager: MonoBehaviour {
 			}
 			//update ui
 			timer.text = "" + (int)countdownTimer;
-			score.text = player.GetComponent<PlayerController> ().score + " / 10";
+			score.text = theOtterScore + " / " + totalOtters;
 		} else {
 			gameOverPanel.SetActive (true);
 		}

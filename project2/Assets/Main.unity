@@ -10299,7 +10299,7 @@ MonoBehaviour:
   player: {fileID: 1027258560}
   timer: {fileID: 1338124058}
   score: {fileID: 285697531}
-  targetSocre: 10
+  targetSocre: 8
   gameover: 0
   levelClearedPanel: {fileID: 981357856}
   gameOverPanel: {fileID: 1001569878}
