@@ -1561,12 +1561,12 @@ Prefab:
     - target: {fileID: 224385209913853952, guid: 270371e8563684bdcafa09ef312bccae,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -128.80002
+      value: -130.30002
       objectReference: {fileID: 0}
     - target: {fileID: 224385209913853952, guid: 270371e8563684bdcafa09ef312bccae,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 177.4
+      value: 178.4
       objectReference: {fileID: 0}
     - target: {fileID: 224385209913853952, guid: 270371e8563684bdcafa09ef312bccae,
         type: 2}
@@ -5600,6 +5600,22 @@ GameObject:
   m_PrefabParentObject: {fileID: 1581675773656680, guid: 366c55b686a1942c6a8671977a03c1cd,
     type: 2}
   m_PrefabInternal: {fileID: 844751859}
+--- !u!114 &1027258567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027258560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9148f6a8fb30ca46b4626e39b128cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newFriendsqueak: 0
+  alreadyFriendsqueak: 0
+  soundPlayed: 0
+  newsqueak: {fileID: 0}
+  alreadysqueak: {fileID: 0}
 --- !u!1 &1061117266
 GameObject:
   m_ObjectHideFlags: 0
