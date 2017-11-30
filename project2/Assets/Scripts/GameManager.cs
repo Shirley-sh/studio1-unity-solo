@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager: MonoBehaviour {
@@ -18,6 +19,8 @@ public class GameManager: MonoBehaviour {
     private int theOtterScore;
     private int totalOtters;
 
+    private int levelSelect;
+
 
 	public GameObject levelClearedPanel;
 	public GameObject gameOverPanel;
@@ -28,6 +31,8 @@ public class GameManager: MonoBehaviour {
 		flooded = false;
         theOtterScore = player.GetComponent<PlayerController>().otterScore;
         totalOtters = otters.Length;
+
+        levelSelect = 0;    //start at level 0, "Main"
     }
 
 	// Update is called once per frame
@@ -42,8 +47,14 @@ public class GameManager: MonoBehaviour {
 
 		if (!gameover) {
 			if (theOtterScore == targetSocre) {
-				gameover = true;
-				levelClearedPanel.SetActive (true);
+                if (SceneManager.GetActiveScene().name == "level5") {   //if we're on the last level,
+                    gameover = true;
+                    levelClearedPanel.SetActive(true);
+                }
+				else {
+                    levelSelect++;
+                    SceneManager.LoadScene(levelSelect);
+                }
 			}
 
 
