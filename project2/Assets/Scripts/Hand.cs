@@ -48,21 +48,25 @@ public class Hand : MonoBehaviour {
             playerParent.GetComponent<SpringJoint2D>().frequency = 3.0f;
             playerParent.GetComponent<SpringJoint2D>().dampingRatio = 0.7f;
 
+            Debug.Log("gonna hold hands "+otterParent.GetComponent<Otter>().held);
+
             if (isLeftHand) {
                 playerParent.GetComponent<SpringJoint2D>().anchor = new Vector2(-0.25f, 0.25f);
-                playerParent.GetComponent<PlayerController>().HoldLeftHand();
+                playerParent.GetComponent<PlayerController>().HoldLeftHand(otterParent.GetComponent<Otter>().held);
             }
             else {
                 playerParent.GetComponent<SpringJoint2D>().anchor = new Vector2(0.25f, 0.25f);
-                playerParent.GetComponent<PlayerController>().HoldRightHand();
+                playerParent.GetComponent<PlayerController>().HoldRightHand(otterParent.GetComponent<Otter>().held);
             }
 
             if (thisCollision.gameObject.CompareTag("LeftHand")) {
+                Debug.Log("setting held");
                 playerParent.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(-0.25f, 0.25f);
 
                 otterParent.GetComponent<Otter>().HoldLeftHand();
             }
             if (thisCollision.gameObject.CompareTag("RightHand")) {
+                Debug.Log("setting held");
                 playerParent.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0.25f, 0.25f);
                 otterParent.GetComponent<Otter>().HoldRightHand();
 

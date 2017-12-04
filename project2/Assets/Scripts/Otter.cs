@@ -93,7 +93,7 @@ public class Otter : MonoBehaviour {
 		if (thisCollision.gameObject.CompareTag ("Bound")) {
 			//game over
 			alive = false;
-			Debug.Log ("OUT");
+			//Debug.Log ("OUT");
 		}
 	}
 

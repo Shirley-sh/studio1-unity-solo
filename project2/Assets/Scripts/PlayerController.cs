@@ -135,35 +135,35 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void HoldLeftHand()
+    public void HoldLeftHand(bool hasHeld)
     {
         anim.SetBool("Left", true);
-        if (alreadyHeld == false)
+        if (hasHeld == false)
         {
             otterScore++;
             squeak.newFriendsqueak = true;
-            particle.holdGet = true;
+            //particle.holdGet = true;
             Debug.Log("Otter score is now " + otterScore);
         }
-        else if (alreadyHeld == true)
+        else if (hasHeld == true)
         {
-            particle.heldAlready = true;
+            //particle.heldAlready = true;
             squeak.alreadyFriendsqueak = true;
             //otterScore++;
         }
     }
 
-    public void HoldRightHand()
+    public void HoldRightHand(bool hasHeld)
     {
         anim.SetBool("Right", true);
-        if (alreadyHeld == false)
+        if (hasHeld == false)
         {
             otterScore++;
             squeak.newFriendsqueak = true;
-            particle.holdGet = true;
+            //particle.holdGet = true;
             Debug.Log("Otter score is now " + otterScore);
         }
-        else if (alreadyHeld == true)
+        else if (hasHeld == true)
         {
             squeak.alreadyFriendsqueak = true;
             particle.heldAlready = true;

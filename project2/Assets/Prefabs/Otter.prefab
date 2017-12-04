@@ -234,6 +234,8 @@ MonoBehaviour:
   timerMax: 5
   acceleration: 3
   turnSpeed: 0.01
+  thePlayer: {fileID: 1581675773656680, guid: 366c55b686a1942c6a8671977a03c1cd, type: 2}
+  held: 0
   swimSpeed: 0.2
 --- !u!198 &198824607034222356
 ParticleSystem:
