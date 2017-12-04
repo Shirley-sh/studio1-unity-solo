@@ -71,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4804102430465628}
   - component: {fileID: 212956017583999764}
-  - component: {fileID: 114008332488241256}
   - component: {fileID: 50952930752916012}
   - component: {fileID: 114419459662012736}
   - component: {fileID: 70699361916832044}
@@ -302,31 +301,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114008332488241256
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1581675773656680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f4fde34177f4a12834ddb8f6ee8ba8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  cam: {fileID: 0}
-  anim: {fileID: 0}
-  targetAngle: 0
-  targetPosition: {x: 0, y: 0, z: 0}
-  acceleration: 454.7
-  turnSpeed: 0.03
-  isHolding: 1
-  holdingHand: {fileID: 0}
-  waterParticle: {fileID: 1129621557535960}
-  score: 0
-  otterScore: 0
-  alreadyHeld: 0
-  swimTimer: 0
 --- !u!114 &114124568863104906
 MonoBehaviour:
   m_ObjectHideFlags: 1
