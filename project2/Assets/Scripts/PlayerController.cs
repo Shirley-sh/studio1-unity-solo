@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public int score;
     public int otterScore;  //how many otters have you held hands with?
     Squeaker squeak;
+    Particletriggercontrol particle;
     private bool alreadyHeld;
 
     float swimTimer;
@@ -141,10 +142,12 @@ public class PlayerController : MonoBehaviour
         {
             otterScore++;
             squeak.newFriendsqueak = true;
+            particle.holdGet = true;
             Debug.Log("Otter score is now " + otterScore);
         }
         else if (alreadyHeld == true)
         {
+            particle.heldAlready = true;
             squeak.alreadyFriendsqueak = true;
             //otterScore++;
         }
@@ -157,11 +160,13 @@ public class PlayerController : MonoBehaviour
         {
             otterScore++;
             squeak.newFriendsqueak = true;
+            particle.holdGet = true;
             Debug.Log("Otter score is now " + otterScore);
         }
         else if (alreadyHeld == true)
         {
             squeak.alreadyFriendsqueak = true;
+            particle.heldAlready = true;
             //otterScore++;
         }
     }
