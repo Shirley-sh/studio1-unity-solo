@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 114153860645346724}
   - component: {fileID: 82764050543222666}
   - component: {fileID: 114355092709400244}
+  - component: {fileID: 82707500982265906}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -269,6 +270,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.39028955}
   m_Size: {x: 1.9039519, y: 4.3867326}
   m_Direction: 0
+--- !u!82 &82707500982265906
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581675773656680}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b763c7461c4d3fd45b575748e6cb4002, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 255
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82764050543222666
 AudioSource:
   m_ObjectHideFlags: 1
@@ -393,9 +474,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newFriendsqueak: 0
   alreadyFriendsqueak: 0
+  gameOverfriendsqueak: 0
   soundPlayed: 0
   newsqueak: {fileID: 8300000, guid: d9100db88f37f4f4fa0799a7df2a3e07, type: 3}
   alreadysqueak: {fileID: 8300000, guid: 7029254a3937be44f8cc0fcbc9249fc2, type: 3}
+  gameOversqueak: {fileID: 0}
 --- !u!114 &114221296741027120
 MonoBehaviour:
   m_ObjectHideFlags: 1
