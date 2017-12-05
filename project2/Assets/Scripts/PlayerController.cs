@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isHolding = false;
+        particle = GetComponent<Particletriggercontrol>();
         squeak = GetComponent<Squeaker>();
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
@@ -142,12 +143,12 @@ public class PlayerController : MonoBehaviour
         {
             otterScore++;
             squeak.newFriendsqueak = true;
-            //particle.holdGet = true;
+            particle.holdGetleft = true;
             Debug.Log("Otter score is now " + otterScore);
         }
         else if (hasHeld == true)
         {
-            //particle.heldAlready = true;
+            particle.heldAlready = true;
             squeak.alreadyFriendsqueak = true;
             //otterScore++;
         }
@@ -160,7 +161,7 @@ public class PlayerController : MonoBehaviour
         {
             otterScore++;
             squeak.newFriendsqueak = true;
-            //particle.holdGet = true;
+            particle.holdGetright = true;
             Debug.Log("Otter score is now " + otterScore);
         }
         else if (hasHeld == true)
