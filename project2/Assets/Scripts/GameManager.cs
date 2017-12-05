@@ -37,7 +37,7 @@ public class GameManager: MonoBehaviour {
         aud = GetComponent<AudioSource>();
         totalOtters = otters.Length;
 
-        levelSelect = 0;    //start at level 0, "Main"
+        levelSelect = SceneManager.GetActiveScene().buildIndex;    //start at level 0, "Main"
     }
 
 	// Update is called once per frame
@@ -51,7 +51,7 @@ public class GameManager: MonoBehaviour {
 		}
 
 		if (!gameover) {
-			if (theOtterScore == targetSocre) {
+			if (theOtterScore >= targetSocre) {
                 if (SceneManager.GetActiveScene().name == "level5") {   //if we're on the last level,
                     gameover = true;
                     levelClearedPanel.SetActive(true);
