@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 
 public class GameManager: MonoBehaviour {
-	public float countdownTimer;
+    AudioSource aud;
+
+    public float countdownTimer;
 	public GameObject[] lands;
 	public GameObject[] shells;
 	public GameObject[] otters;
@@ -20,6 +22,8 @@ public class GameManager: MonoBehaviour {
     private int totalOtters;
 
     private int levelSelect;
+    public AudioClip gameOversqueak;
+    public bool overSqueaksounded = false; //Did the game over squeak play already?
 
 
 	public GameObject levelClearedPanel;
@@ -30,6 +34,7 @@ public class GameManager: MonoBehaviour {
 		gameover = false;
 		flooded = false;
         theOtterScore = player.GetComponent<PlayerController>().otterScore;
+        aud = GetComponent<AudioSource>();
         totalOtters = otters.Length;
 
         levelSelect = 0;    //start at level 0, "Main"
@@ -41,7 +46,7 @@ public class GameManager: MonoBehaviour {
         foreach (GameObject otter in otters) {
 			if (!otter.GetComponent<Otter> ().isAlive ()) {
 				gameover = true;
-				break;
+                break;
 			}
 		}
 
@@ -78,7 +83,13 @@ public class GameManager: MonoBehaviour {
 			timer.text = "" + (int)countdownTimer;
 			score.text = theOtterScore + " / " + totalOtters;
 		} else {
-			gameOverPanel.SetActive (true);
+            gameOverPanel.SetActive (true);
 		}
-	}
+        if ((gameover == true) && (overSqueaksounded == false))
+        {
+            aud.PlayOneShot(gameOversqueak);
+            overSqueaksounded = true;
+        }
+
+    }
 }

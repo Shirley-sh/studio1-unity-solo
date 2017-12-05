@@ -8,9 +8,11 @@ public class Squeaker : MonoBehaviour {
 
     public bool newFriendsqueak;
     public bool alreadyFriendsqueak;
+    public bool gameOverfriendsqueak; // "friend" is the bools, non friends are audio clips
     public bool soundPlayed;
     public AudioClip newsqueak;
     public AudioClip alreadysqueak;
+    public AudioClip gameOversqueak;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,11 @@ public class Squeaker : MonoBehaviour {
         {
             audiosource.PlayOneShot(alreadysqueak);
             alreadyFriendsqueak = false;
+        }
+        if (gameOverfriendsqueak == true) ;
+        {
+            audiosource.PlayOneShot(gameOversqueak);
+            gameOverfriendsqueak = false;
         }
 	}
 }

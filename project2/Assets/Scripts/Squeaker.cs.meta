@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: f9148f6a8fb30ca46b4626e39b128cb2
-timeCreated: 1512073704
+timeCreated: 1512447314
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - newsqueak: {instanceID: 0}
+  - alreadysqueak: {instanceID: 0}
+  - gameOversqueak: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
