@@ -8,4 +8,8 @@ public class Restart : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
 	}
 
+    public void RestartEntireGame() {
+        SceneManager.LoadScene(0);
+    }
+
 }
