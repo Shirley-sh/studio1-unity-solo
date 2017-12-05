@@ -6,11 +6,9 @@ public class Particletriggercontrol : MonoBehaviour {
 
     ParticleSystem particlesystem;
 
-    public ParticleSystem sparkleRight;
-    public ParticleSystem sparkleLeft;
+    public ParticleSystem sparkle;
     public ParticleSystem heart;
-    public bool holdGetright = false;
-    public bool holdGetleft = false;
+    public bool holdGet = false;
     public bool heldAlready = false;
 
 	// Use this for initialization
@@ -20,18 +18,10 @@ public class Particletriggercontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (holdGetright == true)
+        if (holdGet == true)
         {
-            sparkleRight.Play();
-            holdGetright = false;
-            Debug.Log("Particles should play");
-        }
-
-        if (holdGetleft == true)
-        {
-            sparkleLeft.Play();
-            holdGetleft = false;
-            Debug.Log("Particles should play");
+            sparkle.Play();
+            holdGet = false;
         }
 
         if (heldAlready == true)
